@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zippy Blog — Download free</title>
+<meta name="description" content="Zippy Blog researches, writes, fact-checks, illustrates and publishes blog posts that bring you customers. Download free for Mac and Windows — 20 blog posts included.">
+<meta property="og:title" content="Zippy Blog — a blog that brings you customers, written while you watch">
+<meta property="og:description" content="Download free for Mac and Windows. 20 blog posts included, no credit card.">
+<meta property="og:image" content="assets/preview.jpg">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000; --panel:#0b0c11; --panel2:#0f1118; --line:#1b1e2a; --text:#f4f6fb; --muted:#9aa3bb; --dim:#6d7590;
+  --blue:#2f7bff; --blue2:#6aa8ff; --yellow:#ffd60a; --green:#34d399; --pink:#f472b6; --violet:#a78bfa; --cyan:#22d3ee;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.01em}
+
+/* ── nav ─────────────────────────────── */
+nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+nav .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;font-size:17px}
+.brand img{width:30px;height:30px;border-radius:8px}
+nav .links{display:flex;gap:26px;margin-left:28px;font-size:14px;color:var(--muted)}
+nav .links a:hover{color:#fff}
+nav .spacer{flex:1}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-weight:600;font-size:14px;padding:9px 16px;transition:transform .15s ease,background .2s}
+.pill:hover{transform:translateY(-1px)}
+.pill.ghost{border:1px solid rgba(255,255,255,.14);color:#e8ecf6}
+.pill.ghost:hover{background:rgba(255,255,255,.06)}
+.pill.solid{background:#fff;color:#000}
+
+/* ── hero ────────────────────────────── */
+.hero{position:relative;padding:92px 0 40px;text-align:center;overflow:hidden}
+.aurora{position:absolute;inset:-20% -10% auto;height:900px;pointer-events:none;filter:blur(70px);opacity:.85;
+  background:radial-gradient(40% 38% at 30% 30%,rgba(47,123,255,.55),transparent 70%),radial-gradient(30% 30% at 72% 22%,rgba(167,139,250,.35),transparent 70%),radial-gradient(32% 30% at 55% 60%,rgba(34,211,238,.18),transparent 70%);
+  animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(0,40px,0) scale(1.06)}}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent)}
+.hero .wrap{position:relative}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:999px;padding:6px 14px 6px 6px;font-size:13.5px;color:#d5daea}
+.badge b{background:var(--yellow);color:#000;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700}
+h1{font-size:clamp(42px,7.2vw,88px);line-height:1.02;letter-spacing:-.045em;font-weight:800;margin:26px auto 0;max-width:980px}
+h1 .serif{font-weight:400;letter-spacing:-.02em;background:linear-gradient(90deg,#9cc4ff,#2f7bff 45%,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.lead{font-size:clamp(17px,2vw,21px);color:#aab2c8;max-width:720px;margin:24px auto 0}
+.cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;border-radius:18px;font-weight:700;font-size:17px;padding:18px 28px;transition:transform .15s ease,box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.primary{color:#fff;background:linear-gradient(180deg,#3b86ff,#1f5fe0);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 14px 40px rgba(31,95,224,.5)}
+.btn.primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 18px 56px rgba(31,95,224,.7)}
+.btn.yellow{color:#000;background:linear-gradient(180deg,#ffe14d,#ffc800);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 14px 40px rgba(255,200,0,.3)}
+.btn.ghost{border:1px solid rgba(255,255,255,.16);color:#e8ecf6;background:rgba(255,255,255,.03)}
+.btn small{display:block;font-weight:500;font-size:12.5px;opacity:.75;margin-top:1px}
+.btn .t{text-align:left;line-height:1.2}
+.fine{margin-top:18px;font-size:13.5px;color:var(--dim)}
+.fine b{color:#c3c9da;font-weight:600}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);margin-right:6px;vertical-align:1px}
+
+/* window frame */
+.shot{position:relative;margin:64px auto 0;max-width:1120px;border-radius:18px;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.04) 40%,rgba(47,123,255,.25));box-shadow:0 40px 120px rgba(31,95,224,.28),0 10px 40px rgba(0,0,0,.6)}
+.shot .frame{border-radius:17px;overflow:hidden;background:#05060a}
+.shot .bar{height:34px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#0a0b10;border-bottom:1px solid #15171f}
+.shot .bar i{width:11px;height:11px;border-radius:50%;background:#2a2d38}
+.shot .bar i:nth-child(1){background:#ff5f57}.shot .bar i:nth-child(2){background:#febc2e}.shot .bar i:nth-child(3){background:#28c840}
+.shot .bar span{margin-left:10px;font-size:12px;color:#6d7590}
+.zippy-float{position:absolute;width:120px;left:-38px;bottom:-34px;filter:drop-shadow(0 18px 30px rgba(47,123,255,.45));animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-3deg)}}
+
+/* ── logos / proof strip ─────────────── */
+.strip{display:flex;justify-content:center;gap:42px;flex-wrap:wrap;margin:84px auto 0;color:var(--dim);font-size:14px}
+.strip div{display:flex;align-items:center;gap:10px}
+.strip strong{color:#fff;font-size:26px;font-weight:800;letter-spacing:-.03em}
+
+/* ── sections ────────────────────────── */
+section{padding:110px 0}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue2)}
+h2{font-size:clamp(32px,4.6vw,56px);line-height:1.06;letter-spacing:-.035em;font-weight:800;margin-top:12px}
+h2 .serif{color:#9cc4ff}
+.sub{color:#aab2c8;font-size:18px;max-width:640px;margin-top:16px}
+.center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:54px}
+.agent{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:20px;padding:22px 18px 20px;overflow:hidden}
+.agent::before{content:"";position:absolute;inset:-1px;border-radius:20px;padding:1px;background:linear-gradient(160deg,var(--c),transparent 55%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.7}
+.ring{width:46px;height:46px;border-radius:50%;position:relative;margin-bottom:16px}
+.ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent,var(--c),transparent 70%);animation:spin 2s linear infinite}
+.ring::after{content:"";position:absolute;inset:2px;border-radius:50%;background:#0b0c10}
+.ring span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;font-size:19px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.agent h3{font-size:16px;font-weight:700;color:var(--c)}
+.agent p{font-size:14px;color:#aab2c8;margin-top:6px;line-height:1.5}
+.agent .say{margin-top:14px;font-size:12.5px;color:#d5daea;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.45}
+
+/* feature rows */
+.row{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:center;margin-top:110px}
+.row.flip{grid-template-columns:1.25fr 1fr}
+.row.flip .txt{order:2}
+.txt h3{font-size:clamp(26px,3vw,38px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin-top:10px}
+.txt p{color:#aab2c8;font-size:17px;margin-top:16px}
+.ticks{list-style:none;margin-top:22px;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;font-size:15.5px;color:#d5daea}
+.ticks li::before{content:"";flex:none;width:20px;height:20px;border-radius:7px;margin-top:2px;background:rgba(47,123,255,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236aa8ff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
+.img{border-radius:16px;overflow:hidden;border:1px solid #1d2130;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03)}
+.img.tilt{transform:perspective(1600px) rotateY(-4deg) rotateX(2deg);transition:transform .6s ease}
+.row.flip .img.tilt{transform:perspective(1600px) rotateY(4deg) rotateX(2deg)}
+.img.tilt:hover{transform:none}
+
+/* covers */
+.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px}
+.cover{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:#0a0b10}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.cover:hover img{transform:scale(1.05)}
+.cover figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;font-size:14px;font-weight:600;line-height:1.35;background:linear-gradient(transparent,rgba(0,0,0,.88))}
+
+/* free */
+.free{position:relative;border-radius:32px;overflow:hidden;border:1px solid rgba(255,214,10,.25);background:radial-gradient(120% 140% at 0% 0%,rgba(255,214,10,.16),rgba(255,214,10,.03) 45%,transparent),var(--panel);padding:64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.free .big{font-size:clamp(64px,9vw,128px);font-weight:800;letter-spacing:-.06em;line-height:.9;color:var(--yellow)}
+.free .big span{display:block;font-size:.28em;letter-spacing:-.02em;color:#fff;margin-top:10px}
+.free ul{list-style:none;display:grid;gap:14px}
+.free li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:#e3e7f2}
+.free li em{font-style:normal;flex:none;width:28px;height:28px;border-radius:9px;background:rgba(255,214,10,.14);display:flex;align-items:center;justify-content:center;font-size:15px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px;counter-reset:s}
+.step{border:1px solid var(--line);border-radius:20px;padding:24px;background:var(--panel)}
+.step::before{counter-increment:s;content:counter(s);display:flex;width:34px;height:34px;border-radius:11px;align-items:center;justify-content:center;font-weight:800;background:rgba(47,123,255,.15);color:var(--blue2);margin-bottom:16px}
+.step h4{font-size:16.5px;font-weight:700}
+.step p{font-size:14.5px;color:#aab2c8;margin-top:6px}
+
+/* faq */
+.faq{max-width:820px;margin:50px auto 0;display:grid;gap:10px}
+details{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:18px 22px}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--blue2);font-size:22px;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:#aab2c8;margin-top:10px;font-size:15.5px}
+
+/* final */
+.final{position:relative;text-align:center;padding:130px 0 120px;overflow:hidden}
+.final .aurora{top:10%;opacity:.6}
+.final img.z{width:150px;margin:0 auto 18px;animation:bob 3.4s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(47,123,255,.5))}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--dim);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+@media (max-width:980px){
+  nav .links{display:none}
+  .team{grid-template-columns:repeat(2,1fr)}
+  .row,.row.flip{grid-template-columns:1fr;gap:32px;margin-top:80px}
+  .row.flip .txt{order:0}
+  .img.tilt,.row.flip .img.tilt{transform:none}
+  .covers{grid-template-columns:repeat(2,1fr)}
+  .free{grid-template-columns:1fr;padding:40px 28px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .zippy-float{width:84px;left:-10px;bottom:-26px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .team,.covers,.steps{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  section{padding:80px 0}
+  nav .pill.ghost{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/icon.png" alt="">Zippy Blog</a>
+    <div class="links"><a href="#team">How it works</a><a href="#quality">Quality</a><a href="#free">Free posts</a><a href="#faq">FAQ</a></div>
+    <div class="spacer"></div>
+    <a class="pill ghost js-version-pill" href="#download">Version <span class="js-version">…</span></a>
+    <a class="pill solid js-dl-main" href="#download">Download free</a>
+  </div>
+</nav>
+
+<header class="hero" id="download">
+  <div class="aurora"></div><div class="grid-bg"></div>
+  <div class="wrap">
+    <span class="badge rv"><b>FREE</b> 20 blog posts included — no credit card</span>
+    <h1 class="rv">A blog that brings you <span class="serif">customers,</span> written while you watch.</h1>
+    <p class="lead rv">Type your web address. A team of AI agents researches what your buyers search for on Google, writes the posts, checks every fact, paints a cover for each one and publishes them to your website.</p>
+    <div class="cta rv">
+      <a class="btn primary js-dl-mac" href="https://project-vyxv2.vercel.app/api/download?os=mac">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM14.1 5.86c.63-.77 1.06-1.84.94-2.9-.91.04-2.01.6-2.66 1.37-.58.67-1.09 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.27z"/></svg>
+        <span class="t">Download free for Mac<small>Apple Silicon &amp; Intel · <span class="js-mac-size">signed by Apple</span></small></span>
+      </a>
+      <a class="btn ghost js-dl-win" href="https://project-vyxv2.vercel.app/api/download?os=windows">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.3l7.4-1v7.1H3V5.3zm0 13.4l7.4 1v-7.1H3v6.1zm8.3 1.1L21 21v-8.4h-9.7v7.2zm0-15.6v7.2H21V3l-9.7 1.2z"/></svg>
+        <span class="t">Download free for Windows<small>One file, nothing to install · <span class="js-win-size">.exe</span></small></span>
+      </a>
+    </div>
+    <p class="fine rv"><span class="dot"></span>Latest version <b class="js-version">…</b><span class="js-date"></span> · Updates itself every time you open it</p>
+
+    <div class="shot rv">
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span>Zippy Blog — Agent Room</span></div>
+        <img src="assets/room.jpg" alt="The Agent Room: 20 finished blog posts, each with its own cover, sources and word count" width="1800" height="1125">
+      </div>
+      <img class="zippy-float" src="assets/zippy.png" alt="">
+    </div>
+
+    <div class="strip rv">
+      <div><strong>20</strong> free posts to start</div>
+      <div><strong>1,200–2,000</strong> words each</div>
+      <div><strong>20+</strong> sources checked per post</div>
+      <div><strong>5</strong> AI agents on every post</div>
+    </div>
+  </div>
+</header>
+
+<section id="team">
+  <div class="wrap center">
+    <div class="kicker rv">Your AI blog team</div>
+    <h2 class="rv">Five specialists. <span class="serif">Every single post.</span></h2>
+    <p class="sub rv">You don't get one chatbot guessing. Each post goes through a team, and you can watch every one of them work, live.</p>
+    <div class="team">
+      <div class="agent rv" style="--c:var(--cyan)"><div class="ring"><span>🔎</span></div><h3>Researcher</h3><p>Searches the web and reads real sources, with dates.</p><div class="say">26 sources found</div></div>
+      <div class="agent rv" style="--c:var(--blue2)"><div class="ring"><span>✍️</span></div><h3>Writer</h3><p>Writes the answer your buyer is searching for, in your voice.</p><div class="say">Section 5 of 8…</div></div>
+      <div class="agent rv" style="--c:var(--violet)"><div class="ring"><span>🛡️</span></div><h3>Fact-checker</h3><p>A separate agent re-reads every claim against the sources.</p><div class="say">Every claim checks out</div></div>
+      <div class="agent rv" style="--c:var(--pink)"><div class="ring"><span>🎨</span></div><h3>Cover artist</h3><p>Paints an original cover image for every post.</p><div class="say">Cover ready</div></div>
+      <div class="agent rv" style="--c:var(--green)"><div class="ring"><span>🚀</span></div><h3>Publisher</h3><p>Puts each post on your website on its date, by itself.</p><div class="say">Live on your site</div></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="row">
+      <div class="txt rv">
+        <div class="kicker">See it before it's live</div>
+        <h3>Exactly how it will look on Google.</h3>
+        <p>Every finished post opens on its preview: the Google result your customers will see, the cover, and the full article. One click, and you know it's right.</p>
+        <ul class="ticks"><li>Titles are the questions your buyers actually type</li><li>Search phrases in bold, your product linked where it belongs</li><li>Cover images described for Google, too</li></ul>
+      </div>
+      <div class="img tilt rv"><img src="assets/preview.jpg" alt="A finished post: how it looks on Google, and its cover image" loading="lazy"></div>
+    </div>
+
+    <div class="row flip" id="quality">
+      <div class="txt rv">
+        <div class="kicker">Nothing made up</div>
+        <h3>A second AI checks every claim.</h3>
+        <p>The fact-checker is a different agent from the writer. It compares each sentence with the research notes and shows you exactly what it changed, and why.</p>
+        <ul class="ticks"><li>Every fact has a source and a date</li><li>No invented reviews, numbers or features</li><li>Only what's true about your product</li></ul>
+      </div>
+      <div class="img tilt rv"><img src="assets/factcheck.jpg" alt="Fact-check changes: what the checker removed and rewrote" loading="lazy"></div>
+    </div>
+
+    <div class="row">
+      <div class="txt rv">
+        <div class="kicker">Watch it work</div>
+        <h3>Every step, live. No black box.</h3>
+        <p>Open any post and follow its live log: which questions the researcher asked Google, which section the writer is on, when the cover was painted and when it's ready.</p>
+        <ul class="ticks"><li>Research notes you can read</li><li>Pause, resume or retry any post</li><li>You're only charged for posts that finish</li></ul>
+      </div>
+      <div class="img tilt rv"><img src="assets/log.jpg" alt="The live log of one post, agent by agent" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap center">
+    <div class="kicker rv">Real covers from real posts</div>
+    <h2 class="rv">Every post gets its own <span class="serif">cover.</span></h2>
+    <p class="sub rv">Painted by the cover artist for that article — no stock photos, no text, no logos. These are from posts Zippy Blog wrote.</p>
+    <div class="covers">
+      <figure class="cover rv"><img src="assets/cover1.jpg" alt="" loading="lazy"><figcaption>Can my cursor react with emojis while I'm on a live stream?</figcaption></figure>
+      <figure class="cover rv"><img src="assets/cover2.jpg" alt="" loading="lazy"><figcaption>How do I send the same WhatsApp message to several saved groups at once?</figcaption></figure>
+      <figure class="cover rv"><img src="assets/cover3.jpg" alt="" loading="lazy"><figcaption>What is the best Chrome extension to fill Salesforce forms from a LinkedIn bio?</figcaption></figure>
+      <figure class="cover rv"><img src="assets/cover4.jpg" alt="" loading="lazy"><figcaption>Is there an AI tool that cuts a long webinar into short clips with captions?</figcaption></figure>
+      <figure class="cover rv"><img src="assets/cover5.jpg" alt="" loading="lazy"><figcaption>How do I find something I copied an hour ago?</figcaption></figure>
+      <figure class="cover rv"><img src="assets/cover6.jpg" alt="" loading="lazy"><figcaption>What is the best tool to post the same listing to 40+ Facebook groups?</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="free" style="padding-top:20px">
+  <div class="wrap">
+    <div class="free rv">
+      <div>
+        <div class="big">20<span>blog posts, free.</span></div>
+        <p class="sub" style="margin-top:22px">Download Zippy Blog, type your web address and watch your first 20 posts being researched, written, checked and illustrated. See it working on your own business before you pay anything.</p>
+        <div class="cta" style="justify-content:flex-start;margin-top:28px">
+          <a class="btn yellow js-dl-main" href="https://project-vyxv2.vercel.app/api/download?os=mac"><span class="t js-main-label">Download free</span></a>
+        </div>
+      </div>
+      <ul>
+        <li><em>💳</em><span><b>No credit card.</b> Just your name and email.</span></li>
+        <li><em>📝</em><span><b>20 full posts</b> — 1,200 to 2,000 words, sourced, with covers.</span></li>
+        <li><em>🎯</em><span><b>Written for buyers</b> — the questions people ask right before they buy.</span></li>
+        <li><em>🔌</em><span><b>Publishes for you</b> — WordPress, Lovable and more, or download them.</span></li>
+        <li><em>⚡</em><span><b>Always up to date</b> — the app updates itself.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:30px">
+  <div class="wrap center">
+    <div class="kicker rv">Four steps</div>
+    <h2 class="rv">From web address to <span class="serif">published.</span></h2>
+    <div class="steps">
+      <div class="step rv"><h4>Type your web address</h4><p>Zippy reads your site and lists what you sell.</p></div>
+      <div class="step rv"><h4>Pick your products</h4><p>Up to 10 per campaign — or let Zippy pick your most important ones.</p></div>
+      <div class="step rv"><h4>Approve the titles</h4><p>Real buyer questions. Change, remove or add any — nothing is written yet.</p></div>
+      <div class="step rv"><h4>Watch them get written</h4><p>Connect your site once and posts go live on schedule, by themselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:30px">
+  <div class="wrap">
+    <div class="center"><div class="kicker rv">Questions</div><h2 class="rv">Good to know</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>Is it really free?</summary><p>Yes. Your first 20 blog posts are included, with no credit card. After that, one credit is one finished post — you're only charged when a post is ready.</p></details>
+      <details class="rv"><summary>Which computers does it run on?</summary><p>Mac (Apple Silicon and Intel, signed and notarized by Apple) and Windows. One download, nothing else to install.</p></details>
+      <details class="rv"><summary>Will the posts sound like my business?</summary><p>Zippy reads your website first, then asks you about anything it isn't sure of — your button, your prices, who each product is for. Articles only say what's true about your product.</p></details>
+      <details class="rv"><summary>Where do the posts get published?</summary><p>Straight to WordPress or a Lovable site, through a webhook, or a connection Zippy builds for your platform. Or download them and paste them in yourself.</p></details>
+      <details class="rv"><summary>How do I install it on a Mac?</summary><p>Open the .dmg and drag Zippy Blog into Applications, then open it from there. It updates itself after that.</p></details>
+      <details class="rv"><summary>Windows says "Windows protected your PC"?</summary><p>That's SmartScreen being careful with a new app. Click "More info", then "Run anyway".</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="aurora"></div>
+  <div class="wrap">
+    <img class="z rv" src="assets/zippy.png" alt="Zippy, the Zippy Blog mascot">
+    <h2 class="rv">Wake up to a blog that <span class="serif">brings you customers.</span></h2>
+    <div class="cta rv">
+      <a class="btn primary js-dl-mac" href="https://project-vyxv2.vercel.app/api/download?os=mac"><span class="t">Download free for Mac</span></a>
+      <a class="btn ghost js-dl-win" href="https://project-vyxv2.vercel.app/api/download?os=windows"><span class="t">Download free for Windows</span></a>
+    </div>
+    <p class="fine rv">Version <b class="js-version">…</b> · 20 free blog posts · No credit card</p>
+  </div>
+</div>
+
+<footer><div class="wrap"><span>© Zippy Blog by InventaBot</span><span><a href="https://github.com/inventabotnow/zippyblog-download/releases/latest">All downloads</a></span></div></footer>
+
+<script>
+(function(){
+  var API = "https://project-vyxv2.vercel.app";
+  var mac = API + "/api/download?os=mac", win = API + "/api/download?os=windows";
+  var ua = navigator.userAgent || "", isWin = /Windows/i.test(ua);
+  function all(sel, fn){ Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
+  function mb(n){ return n ? (n/1048576).toFixed(0) + " MB" : ""; }
+
+  // The main button follows the visitor's computer.
+  all(".js-dl-main", function(a){ a.href = isWin ? win : mac; });
+  all(".js-main-label", function(s){ s.textContent = isWin ? "Download free for Windows" : "Download free for Mac"; });
+  if (isWin) { var p = document.querySelector(".hero .js-dl-win"), m = document.querySelector(".hero .js-dl-mac"); if (p && m) { p.classList.replace("ghost","primary"); m.classList.replace("primary","ghost"); p.parentNode.insertBefore(p, m); } }
+
+  // The latest version, straight from the releases.
+  fetch(API + "/api/version").then(function(r){ return r.ok ? r.json() : null; }).then(function(v){
+    if (!v || !v.version) throw 0;
+    all(".js-version", function(s){ s.textContent = v.version; });
+    if (v.published_at) { var d = new Date(v.published_at); all(".js-date", function(s){ s.textContent = " · released " + d.toLocaleDateString(undefined,{day:"numeric",month:"long",year:"numeric"}); }); }
+    if (v.mac) all(".js-mac-size", function(s){ s.textContent = "signed by Apple · " + mb(v.mac.size); });
+    if (v.windows) all(".js-win-size", function(s){ s.textContent = ".exe · " + mb(v.windows.size); });
+  }).catch(function(){ all(".js-version", function(s){ s.textContent = "latest"; }); });
+
+  // Gentle reveal on scroll.
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" }) : null;
+  all(".rv", function(el, i){ el.style.transitionDelay = (i % 6) * 60 + "ms"; io ? io.observe(el) : el.classList.add("in"); });
+})();
+</script>
+</body>
+</html>
